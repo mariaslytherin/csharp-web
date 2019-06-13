@@ -8,5 +8,6 @@
 
         public const string HttpNewLine = "\r\n";
 
+        public const string UnsupportedHttpMethodExceptionMessage = "The HTTP method - {0} is not supported.";
     }
 }

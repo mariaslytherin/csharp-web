@@ -1,8 +1,8 @@
 ﻿using SIS.HTTP.Enums;
-using SIS.HTTP.Headers.Contracts;
+using SIS.HTTP.Headers;
 using System.Collections.Generic;
 
-namespace SIS.HTTP.Requests.Contracts
+namespace SIS.HTTP.Requests
 {
     public interface IHttpRequest
     {
