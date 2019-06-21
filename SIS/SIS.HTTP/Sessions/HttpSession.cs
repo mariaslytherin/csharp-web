@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using SIS.Common;
-using SIS.HTTP.Common;
-
 namespace SIS.HTTP.Sessions
 {
     public class HttpSession : IHttpSession
