@@ -5,7 +5,7 @@ namespace SULS.Data
 {
     public class SULSContext : DbContext
     {
-        public DbSet<User> MyProperty { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public DbSet<Problem> Problems { get; set; }
 
@@ -21,10 +21,10 @@ namespace SULS.Data
         {
             modelBuilder.Entity<User>()
                 .HasKey(user => user.Id);
-
+            
             modelBuilder.Entity<Problem>()
                 .HasKey(problem => problem.Id);
-
+            
             modelBuilder.Entity<Submission>()
                  .HasKey(submission => submission.Id);
 

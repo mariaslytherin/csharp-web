@@ -1,14 +1,11 @@
-﻿using Panda.Data.Models;
-using System.Collections.Generic;
+﻿using SULS.Models;
 
-namespace Panda.Services
+namespace SULS.Services
 {
     public interface IUsersService
     {
         string CreateUser(string username, string email, string password);
 
         User GetUserOrNull(string username, string password);
-
-        IEnumerable<string> GetUsernames();
     }
 }

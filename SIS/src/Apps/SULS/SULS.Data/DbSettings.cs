@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SULS.Data
+﻿namespace SULS.Data
 {
     public class DbSettings
     {
-        public const string ConnectionString = @"Integrated Security=True;Server=.;Database=SULS;Trusted_Connection=True;";
+        public const string ConnectionString = @"Server=.;Database=SULS;Trusted_Connection=True;Integrated Security=True;";
     }
 }
