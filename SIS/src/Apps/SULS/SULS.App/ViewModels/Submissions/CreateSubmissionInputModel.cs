@@ -9,5 +9,7 @@ namespace SULS.App.ViewModels.Submissions
         [RequiredSis]
         [StringLengthSis(30, 800, CodeErrorMessage)]
         public string Code { get; set; }
+
+        public string ProblemId { get; set; }
     }
 }

@@ -55,6 +55,7 @@ namespace Panda.Web.Controllers
                     ShippingAddress = x.ShippingAddress,
                     RecipientName = x.Recipient.Username,
                 }).ToList();
+
             return this.View(new PackagesListViewModel { Packages = packages });
         }
 
@@ -70,6 +71,7 @@ namespace Panda.Web.Controllers
                     ShippingAddress = x.ShippingAddress,
                     RecipientName = x.Recipient.Username,
                 }).ToList();
+
             return this.View(new PackagesListViewModel { Packages = packages });
         }
 

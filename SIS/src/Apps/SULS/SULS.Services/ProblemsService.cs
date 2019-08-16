@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using SULS.Data;
 using SULS.Models;
 
@@ -19,7 +20,8 @@ namespace SULS.Services
             var problem = new Problem
             {
                 Name = name,
-                Points = points
+                Points = points,
+                Submissions = new List<Submission>()
             };
 
             this.db.Problems.Add(problem);
@@ -31,14 +33,20 @@ namespace SULS.Services
             return this.db.Problems.ToList();
         }
 
-        public Problem GetCurrentProblem(string name)
+        public Problem GetProblemById(string id)
         {
-            return this.db.Problems.FirstOrDefault(x => x.Name == name);
+            return this.db.Problems.FirstOrDefault(x => x.Id == id);
         }
 
-        public List<Submission> GetAllSubmissionsForThisProblem(string problemName)
+        public int GetAllSubmissionsCountForThisProblem(string id)
         {
-            return this.db.Submissions.Where(x => x.Problem.Name == problemName).ToList();
+            var submission = this.db.Submissions
+               .Include(x => x.Problem)
+               .Include(x => x.User)
+               .Where(x => x.ProblemId == id)
+               .ToList();
+
+            return submission.Count;
         }
     }
 }

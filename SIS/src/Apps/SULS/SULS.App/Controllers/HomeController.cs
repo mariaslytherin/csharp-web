@@ -34,7 +34,7 @@ namespace SULS.App.Controllers
 
                 foreach (var problem in problems)
                 {
-                    countOfSubmissions = this.problemsService.GetAllSubmissionsForThisProblem(problem.Name).ToList().Count;
+                    countOfSubmissions = this.problemsService.GetAllSubmissionsCountForThisProblem(problem.Id);
 
                     ProblemHomeViewModel currentProblem = new ProblemHomeViewModel
                     {

@@ -9,8 +9,8 @@ namespace SULS.Services
 
         List<Problem> GetAll();
 
-        Problem GetCurrentProblem(string name);
+        Problem GetProblemById(string id);
 
-        List<Submission> GetAllSubmissionsForThisProblem(string problemName);
+        int GetAllSubmissionsCountForThisProblem(string id);
     }
 }

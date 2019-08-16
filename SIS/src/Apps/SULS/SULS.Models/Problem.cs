@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SULS.Models
@@ -7,7 +9,7 @@ namespace SULS.Models
     {
         public Problem()
         {
-            this.Id = Guid.NewGuid().ToString();
+            this.Submissions = new List<Submission>();
         }
 
         public string Id { get; set; }
@@ -18,5 +20,7 @@ namespace SULS.Models
 
         [Required]
         public int Points { get; set; }
+
+        public ICollection<Submission> Submissions { get; set; }
     }
 }
